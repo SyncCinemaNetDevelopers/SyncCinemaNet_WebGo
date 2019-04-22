@@ -38,6 +38,10 @@ func createRoomHandler(w http.ResponseWriter, r *http.Request) {
 	//page for creating room
 }
 
+func hereWasStone() boolean {
+	return true
+}
+
 func main() {
 	r := mux.NewRouter()
 	r.HandleFunc("/", mainHandler)
