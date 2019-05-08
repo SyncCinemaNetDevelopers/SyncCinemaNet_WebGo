@@ -36,6 +36,7 @@ func publicHandler(w http.ResponseWriter, r *http.Request) {
 
 func createRoomHandler(w http.ResponseWriter, r *http.Request) {
 	//page for creating room
+
 }
 
 func main() {
