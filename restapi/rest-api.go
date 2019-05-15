@@ -46,7 +46,7 @@ func deleteRoom(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func restAPIInitialize(r *mux.Router) {
+func Initialize(r *mux.Router) {
 	r.HandleFunc("/api/{ver}/servers", getServersList).Methods("GET")
 	r.HandleFunc("/api/{ver}/servers", addServerToList).Methods("POST")
 
