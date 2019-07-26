@@ -1,2 +1,5 @@
 #gitignore file
 vendor/
+
+#executable file
+SyncCinemaNet_WebGo
