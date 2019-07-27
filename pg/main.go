@@ -1,5 +1,0 @@
-package pg
-
-
-func main() {
-}
