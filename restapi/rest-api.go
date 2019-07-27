@@ -46,18 +46,49 @@ func deleteRoom(w http.ResponseWriter, r *http.Request) {
 
 }
 
+func getUsersList(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func getUserInfo(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func updateUserInfo(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func deleteUser(w http.ResponseWriter, r *http.Request) {
+
+}
+
+func sendInvite(w http.ResponseWriter, r *http.Request){
+
+}
+
+/* rest api initialization
+ * for more info read rest-api-spec.md
+ */
 func Initialize(r *mux.Router) {
-	r.HandleFunc("/api/{ver}/servers", getServersList).Methods("GET")
-	r.HandleFunc("/api/{ver}/servers", addServerToList).Methods("POST")
+	r.HandleFunc("/api/{ver}/server", getServersList)
+	r.HandleFunc("/api/{ver}/server", addServerToList).Methods("POST")
 
-	r.HandleFunc("/api/{ver}/servers/{id}", getServerInfo).Methods("GET")
-	r.HandleFunc("/api/{ver}/servers/{id}", updateServerInfo).Methods("PUT")
-	r.HandleFunc("/api/{ver}/servers/{id}", deleteServer).Methods("DELETE")
+	r.HandleFunc("/api/{ver}/server/{id}", getServerInfo).Methods("GET")
+	r.HandleFunc("/api/{ver}/server/{id}", updateServerInfo).Methods("PUT")
+	r.HandleFunc("/api/{ver}/server/{id}", deleteServer).Methods("DELETE")
 
-	r.HandleFunc("/api/{ver}/rooms", getRoomsList).Methods("GET")
-	r.HandleFunc("/api/{ver}/rooms", addRoomToList).Methods("POST")
+	r.HandleFunc("/api/{ver}/room", getRoomsList).Methods("GET")
+	r.HandleFunc("/api/{ver}/room", addRoomToList).Methods("POST")
 
-	r.HandleFunc("/api/{ver}/rooms/{id}", getRoomInfo).Methods("GET")
-	r.HandleFunc("/api/{ver}/rooms/{id}", updateRoomInfo).Methods("PUT")
-	r.HandleFunc("/api/{ver}/rooms/{id}", deleteRoom).Methods("DELETE")
+	r.HandleFunc("/api/{ver}/room/{id}", getRoomInfo).Methods("GET")
+	r.HandleFunc("/api/{ver}/room/{id}", updateRoomInfo).Methods("PUT")
+	r.HandleFunc("/api/{ver}/room/{id}", deleteRoom).Methods("DELETE")
+
+	r.HandleFunc("/api/{ver}/user",getUsersList).Methods("GET")
+
+	r.HandleFunc("/api/{ver}/user/{nickname}",getUserInfo).Methods("GET")
+	r.HandleFunc("/api/{ver}/user/{nickname}",updateUserInfo).Methods("PUT")
+	r.HandleFunc("/api/{ver}/user/{nickname}",deleteUser).Methods("DELETE") // ??
+
+	r.HandleFunc("/api/{ver}/user/{nickname}/send_invite/{room_id}",sendInvite).Methods("POST")
 }
