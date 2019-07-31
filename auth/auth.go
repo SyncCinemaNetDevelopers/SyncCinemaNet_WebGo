@@ -5,11 +5,12 @@ import (
 )
 
 type User struct{
-	Username string
-	Nickname string
-	Email    string
-	Password string
-	ImgURI   string
+	UserStatus int8
+	Username   string
+	Nickname   string
+	Email      string
+	Password   string
+	ImgURI     string
 }
 
 type TokenAuth struct{
@@ -18,12 +19,13 @@ type TokenAuth struct{
 	Token  string
 }
 
-func fakeUser() {
-	fakeUser = User("gregv2", "hamlet", "email", "kfodkoksdokfksodkfk", "uri link")
+func fakeUser() User{
+	fakeUser := User{2, "gregv2", "hamlet", "email", "kfodkoksdokfksodkfk", "uri link"}
 	
 	return fakeUser
 }
 
 func main()  {
-	fmt.print()
+	fake_User := fakeUser()
+	fmt.Println(fake_User)
 }
