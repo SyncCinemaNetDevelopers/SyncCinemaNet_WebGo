@@ -8,3 +8,8 @@ type User struct{
 	ImgURI   string
 }
 
+type TokenAuth struct{
+	User   User
+	Device string
+	Token  string
+}
