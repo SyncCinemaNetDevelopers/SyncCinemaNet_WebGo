@@ -13,3 +13,9 @@ type TokenAuth struct{
 	Device string
 	Token  string
 }
+
+func fakeUser() {
+	fakeUser = User("gregv2", "hamlet", "email", "kfodkoksdokfksodkfk", "uri link")
+	
+	return fakeUser
+}
