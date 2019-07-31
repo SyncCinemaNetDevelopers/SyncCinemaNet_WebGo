@@ -1,5 +1,9 @@
 package auth
 
+import (
+	"fmt"
+)
+
 type User struct{
 	Username string
 	Nickname string
@@ -18,4 +22,8 @@ func fakeUser() {
 	fakeUser = User("gregv2", "hamlet", "email", "kfodkoksdokfksodkfk", "uri link")
 	
 	return fakeUser
+}
+
+func main()  {
+	fmt.print()
 }
