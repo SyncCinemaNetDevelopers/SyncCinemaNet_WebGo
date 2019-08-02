@@ -5,7 +5,7 @@ import (
 )
 
 type User struct{
-	UserStatus int8
+	UserStatus int8   //0 - simple user, 1 - moderator, 2 - admin
 	Username   string
 	Nickname   string
 	Email      string
@@ -14,7 +14,7 @@ type User struct{
 }
 
 type TokenAuth struct{
-	User   User
+	User   *User
 	Device string
 	Token  string
 }
