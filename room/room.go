@@ -10,4 +10,5 @@ type Room struct {
 	Private  bool
 	Author   auth.User
 	userlist map[string]auth.User
+	Tags     map[string]string
 }
