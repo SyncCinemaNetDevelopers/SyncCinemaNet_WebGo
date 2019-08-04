@@ -2,13 +2,11 @@ package chat
 
 import (
 	"SyncCinemaNet_WebGo/auth"
-	"SyncCinemaNet_WebGo/room"
 	"time"
 )
 
 type Chat struct {
-	ID   int64
-	Room room.Room
+	ID int64
 }
 
 type Message struct {
