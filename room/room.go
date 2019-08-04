@@ -5,7 +5,7 @@ import (
 )
 
 type Room struct {
-	Room_ID  int64
+	ID       int64
 	Name     string
 	Private  bool
 	Author   auth.User
