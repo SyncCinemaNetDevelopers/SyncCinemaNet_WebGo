@@ -3,6 +3,7 @@ package chat
 import (
 	"SyncCinemaNet_WebGo/auth"
 	"SyncCinemaNet_WebGo/room"
+	"time"
 )
 
 type Chat struct {
@@ -13,7 +14,7 @@ type Chat struct {
 type Message struct {
 	ID      int
 	Chat_ID Chat
-	Time    string
+	Time    time.Time
 	Author  auth.User
 	Text    string
 }
