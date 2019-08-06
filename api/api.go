@@ -62,16 +62,14 @@ func deleteUser(w http.ResponseWriter, r *http.Request) {
 
 }
 
-func sendInvite(w http.ResponseWriter, r *http.Request){
+func sendInvite(w http.ResponseWriter, r *http.Request) {
 
 }
-
-Router := mux.NewRouter()
 
 /* rest api initialization
  * for more info read rest-api-spec.md
  */
-func Initialize(r *Router) {
+func Initialize(r *mux.Router) {
 	r.HandleFunc("/api/{ver}/server", getServersList)
 	r.HandleFunc("/api/{ver}/server", addServerToList).Methods("POST")
 
@@ -86,11 +84,11 @@ func Initialize(r *Router) {
 	r.HandleFunc("/api/{ver}/room/{id}", updateRoomInfo).Methods("PUT")
 	r.HandleFunc("/api/{ver}/room/{id}", deleteRoom).Methods("DELETE")
 
-	r.HandleFunc("/api/{ver}/user",getUsersList).Methods("GET")
+	r.HandleFunc("/api/{ver}/user", getUsersList).Methods("GET")
 
-	r.HandleFunc("/api/{ver}/user/{nickname}",getUserInfo).Methods("GET")
-	r.HandleFunc("/api/{ver}/user/{nickname}",updateUserInfo).Methods("PUT")
-	r.HandleFunc("/api/{ver}/user/{nickname}",deleteUser).Methods("DELETE") // ??
+	r.HandleFunc("/api/{ver}/user/{nickname}", getUserInfo).Methods("GET")
+	r.HandleFunc("/api/{ver}/user/{nickname}", updateUserInfo).Methods("PUT")
+	r.HandleFunc("/api/{ver}/user/{nickname}", deleteUser).Methods("DELETE") // ??
 
-	r.HandleFunc("/api/{ver}/user/{nickname}/send_invite/{room_id}",sendInvite).Methods("POST")
+	r.HandleFunc("/api/{ver}/user/{nickname}/send_invite/{room_id}", sendInvite).Methods("POST")
 }
