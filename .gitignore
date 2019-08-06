@@ -1,5 +1,6 @@
 #gitignore file
 vendor/
+.vscode/
 
 #executable file
-SyncCinemaNet_WebGo
+SyncCinemaNet_WebGO

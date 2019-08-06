@@ -1,4 +1,4 @@
-package restapi
+package api
 
 import (
 	"net/http"
@@ -66,10 +66,12 @@ func sendInvite(w http.ResponseWriter, r *http.Request){
 
 }
 
+Router := mux.NewRouter()
+
 /* rest api initialization
  * for more info read rest-api-spec.md
  */
-func Initialize(r *mux.Router) {
+func Initialize(r *Router) {
 	r.HandleFunc("/api/{ver}/server", getServersList)
 	r.HandleFunc("/api/{ver}/server", addServerToList).Methods("POST")
 
