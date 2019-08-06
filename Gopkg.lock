@@ -2,14 +2,27 @@
 
 
 [[projects]]
+  digest = "1:6098222470fe0172157ce9bbef5d2200df4edde17ee649c5d6e48330e4afa4c6"
+  name = "github.com/dgrijalva/jwt-go"
+  packages = ["."]
+  pruneopts = ""
+  revision = "06ea1031745cb8b3dab3f6a236daf2b0aa468b7e"
+  version = "v3.2.0"
+
+[[projects]]
+  digest = "1:a3c01bbe8766cbce019cdb900aa51460a6f7bd4266a18d80722dc92297302bc3"
   name = "github.com/gorilla/mux"
   packages = ["."]
+  pruneopts = ""
   revision = "a7962380ca08b5a188038c69871b8d3fbdf31e89"
   version = "v1.7.0"
 
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "6570e9cbb570e8be02ac485b3e2149fbf977da5f9910557f1105f1033b8df901"
+  input-imports = [
+    "github.com/dgrijalva/jwt-go",
+    "github.com/gorilla/mux",
+  ]
   solver-name = "gps-cdcl"
   solver-version = 1
