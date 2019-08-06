@@ -66,7 +66,7 @@ func sendInvite(w http.ResponseWriter, r *http.Request){
 
 }
 
-Router := mux.Router
+Router := mux.NewRouter()
 
 /* rest api initialization
  * for more info read rest-api-spec.md
